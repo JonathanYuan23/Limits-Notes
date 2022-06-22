@@ -1,0 +1,183 @@
+\documentclass{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section{Limits}
+
+The concept of a limit $\displaystyle \lim_{x \to a} f(x)$ is related to the behavior of a function $f(x)$ \emph{near} $x=a$. $f(x)$ doesn't necessarily have to exist at that point.
+
+\medskip
+
+\noindent A one-sided limit is the value that the function approaches as the x-values approach the limit from one side only:
+
+
+\begin{equation*}
+    \lim_{x \to a^{-}} f(x)
+\end{equation*}
+Left-handed/left-sided limits. What value the function approaches as the x-values approach $a$ from the left.
+
+\begin{equation*}
+    \lim_{x \to a^{+}} f(x)
+\end{equation*}
+Right-handed/right-sided limits. What value the function approaches as the x-values approach $a$ from the right.
+
+\begin{equation*}
+    \text{If} \lim_{x \to a^{-}} f(x) = \lim_{x \to a^{+}} f(x)
+\end{equation*}
+Then $\displaystyle \lim_{x \to a} f(x)$ exists.
+
+
+\subsection{Continuity}
+
+Functions that contain no breaks along their entire domain are continuous. A function is not continuous at a jump, hole, or VA.
+
+\medskip
+
+\noindent A function $f(x)$ is continuous at $x=a$ if $\displaystyle \lim_{x \to a} f(x) = f(a)$
+
+\begin{enumerate}
+    \item $f(a)$ must exist
+    \item $\displaystyle \lim_{x \to a} f(x)$ must exist
+    \item $\displaystyle \lim_{x \to a} f(x) = f(a)$
+\end{enumerate}
+
+\bigskip
+
+\noindent E.g. For a function defined by
+$f(x) =
+    \begin{cases}
+        x^{2} + a, & x < 2    \\
+        2a - x,    & x \geq 2
+    \end{cases}
+$
+find $a$ so that $f(x)$ is continuous.
+
+\bigskip
+
+\begin{align*}
+    \lim_{x \to 2^{-}} x^{2} + a & = 4 + a & \lim_{x \to 2^{+}} 2a - x & = 2a - 2
+\end{align*}
+
+\begin{align*}
+    \lim_{x \to 2^{-}} f(x) & = \lim_{x \to 2^{+}} f(x) \\
+    4 + a                   & = 2a -2                   \\
+    a                       & = 6
+\end{align*}
+
+\clearpage
+
+\subsection{Infinity}
+
+\subsubsection{Limits at infinity: Horizontal Asymptotes}
+
+The behavior of a function $f(x)$ as the x-values approach $\pm\infty$. Divide both numerator and denominator by the highest power in the denominator.
+
+\begin{enumerate}
+    \item degree numerator $=$ degree denominator: $\displaystyle \lim_{x \to \pm \infty} f(x) = \text{ratio of leading coefficients}$
+    \item degree numerator $<$ degree denominator: $\displaystyle \lim_{x \to \pm \infty} f(x) = 0$
+    \item degree numerator $>$ degree denominator: $\displaystyle \lim_{x \to \pm \infty} f(x) = \pm \infty$
+\end{enumerate}
+
+\bigskip
+
+\noindent E.g. degree numerator $=$ degree denominator
+
+\begin{align*}
+    \lim_{x \to \infty} \frac{4x^{2} - 2x + 1}{5x^{2} + 7x - 3} & =
+    \lim_{x \to \infty} \cfrac{4 - \cfrac{2}{x} + \cfrac{1}{x^{2}}}{5 + \cfrac{7}{x} - \cfrac{3}{x^{2}}} \\
+                                                                & = \frac{4}{5}
+\end{align*}
+
+\begin{equation*}
+    \therefore \text{HA: } y = \frac{4}{5}
+\end{equation*}
+
+\bigskip
+
+\noindent E.g. degree numerator $<$ degree denominator
+
+\begin{align*}
+    \lim_{x \to \infty} \frac{4x^{2} - 2x + 1}{5x^{3} + 7x^{2} - 3x} & =
+    \lim_{x \to \infty} \cfrac{\cfrac{4}{x} - \cfrac{2}{x^{2}} + \cfrac{1}{x^{3}}}{5 + \cfrac{7}{x} - \cfrac{3}{x^{2}}} \\
+                                                                     & = 0
+\end{align*}
+
+\begin{equation*}
+    \therefore \text{HA: } y = 0
+\end{equation*}
+
+\bigskip
+
+\noindent E.g. degree numerator $>$ degree denominator
+
+\begin{align*}
+    \lim_{x \to \infty} \frac{4x^{3} - 2x^{2} + 1x}{5x^{2} + 7x - 3} & =
+    \lim_{x \to \infty} \cfrac{4x - 2 + \cfrac{1}{x}}{5 + \cfrac{7}{x} - \cfrac{3}{x^{2}}} \\
+                                                                     & = \infty
+\end{align*}
+
+\begin{equation*}
+    \therefore \text{HA: } y = \infty
+\end{equation*}
+
+\clearpage
+
+\subsubsection{Infinite limits: Vertical Asymptotes}
+
+The behavior of a function $f(x)$ near vertical asymptote $x=a$.
+
+\medskip
+
+\noindent For a vertical asymptote $x=a$, $\displaystyle \lim_{x \to a^{-}} f(x) = \pm \infty$ and
+$\displaystyle \lim_{x \to a^{+}} f(x) = \pm \infty$
+
+\bigskip
+
+\noindent E.g. Determine the behavior of $\displaystyle f(x) = \frac{x+1}{x(x-4)}$ around it's vertical Asymptotes
+
+\begin{align*}
+    \lim_{x \to 0^{-}} f(x) & = \left[ \frac{1}{(-0.0000\ldots1)(-4)} \right] \\
+                            & = +\infty
+\end{align*}
+
+\begin{align*}
+    \lim_{x \to 0^{+}} f(x) & = \left[ \frac{1}{(+0.0000\ldots1)(-4)} \right] \\
+                            & = -\infty
+\end{align*}
+
+\begin{align*}
+    \lim_{x \to 4^{-}} f(x) & = \left[ \frac{5}{(4)(-0.0000\ldots1)} \right] \\
+                            & = -\infty
+\end{align*}
+
+\begin{align*}
+    \lim_{x \to 4^{+}} f(x) & = \left[ \frac{5}{(4)(+0.0000\ldots1)} \right] \\
+                            & = +\infty
+\end{align*}
+
+\subsection{Absolute Value}
+For a function $f(x)$ containing $|a|$, split the absolute value into it's two cases:
+
+\begin{enumerate}
+    \item $a \geq 0$
+    \item $a < 0$
+\end{enumerate}
+
+\bigskip
+
+\noindent E.g. $f(x) = \displaystyle \lim_{x \to 5} \frac{|x-5|}{x-5}, \quad x\neq5$
+
+\begin{align*}
+    x-5 & > 0: & \lim_{x \to 5^{+}} \frac{x-5}{x-5}    & = 1  \\
+    x   & > 5                                                 \\\\
+    x-5 & < 0: & \lim_{x \to 5^{-}} \frac{-(x-5)}{x-5} & = -1 \\
+    x   & < 5
+\end{align*}
+
+\begin{equation*}
+    \therefore \lim_{x \to 5} \frac{|x-5|}{x-5} = \text{DNE}
+\end{equation*}
+
+\end{document}
